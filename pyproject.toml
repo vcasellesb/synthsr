@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthsr"
+requires-python = ">=3.9"
+dependencies = [
+    "tensorflow",
+    "numpy",
+    "surfa",
+    "nibabel",
+    "scipy"
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "synthsr.__version__"}
+
+[tool.setuptools.packages.find]
+exclude = ["models"]
