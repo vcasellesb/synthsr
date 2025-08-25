@@ -26,7 +26,7 @@ from .config import MODELS_PATH
 #                                         Main Entrypoint
 # ================================================================================================
 
-def main():
+def main(args=None):
 
     # parse arguments
     parser = argparse.ArgumentParser(description="Implementation of SynthSR that generates a synthetic 1mm MP-RAGE "
@@ -49,14 +49,9 @@ def main():
     parser.add_argument("--threads", type=int, default=1, help="(optional) Number of cores to be used. Default is 1.")
     parser.add_argument("--cpu", action="store_true", help="(optional) Enforce running with CPU rather than GPU.")
     parser.add_argument("--model", default=None, help="(optional) Use a different model file.")
-
-    # check for no arguments
-    if len(sys.argv) < 2:
-        parser.print_help()
-        sys.exit(1)
-
+    
     # parse commandline
-    args = parser.parse_args()
+    args = parser.parse_args(args)
 
     # enforce CPU processing if necessary
     if args.cpu:

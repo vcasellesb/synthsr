@@ -1,1 +1,3 @@
-MODELS_PATH = 'models/'
+import os
+
+MODELS_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models/')
