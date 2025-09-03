@@ -1,0 +1,18 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY . .
+
+# Install essential build tools such as gcc/g++ that may be needed to compile certain Python packages.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    gcc \
+    g++ && \
+    pip install --upgrade pip && \
+    pip install --no-cache-dir -e ./SynthSR && \
+    rm -rf /var/lib/apt/lists/*
+
+# # Set the main command to run your model script when the container starts.
+# ENTRYPOINT ["python", "-m", "src.run_dockerized"]

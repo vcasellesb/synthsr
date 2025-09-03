@@ -57,6 +57,8 @@ def main(args=None):
     if args.cpu:
         print('using CPU, hiding all CUDA_VISIBLE_DEVICES')
         os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+        # from: https://stackoverflow.com/questions/37660312/how-to-run-tensorflow-on-cpu
+        tf.config.set_visible_devices([], 'GPU')
 
     # locate model weights
     if args.model is None:
