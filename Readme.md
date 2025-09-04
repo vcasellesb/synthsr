@@ -2,6 +2,14 @@
 
 I have just isolated SynthSR from FreeSurfer to use in a challenge. **All credits go to Benjamin Billot *et al.***, see references.
 
+## Installation
+
+Installation is simple, just be sure to have `python` > 3.10 and install `tensorflow` according to your needs (this is separated from the rest of depencies since I don't know a straightforward way of installing tf -- there's a cuda installation, cpu installation...). Once you have this, run in your terminal (from the cloned repository):
+
+```bash
+pip install -e .
+```
+
 ### References
 
 [1] *[A Learning Strategy for Contrast-agnostic MRI Segmentation](http://proceedings.mlr.press/v121/billot20a.html)* \

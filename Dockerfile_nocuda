@@ -11,6 +11,7 @@ RUN apt-get update && \
     gcc \
     g++ && \
     pip install --upgrade pip && \
+    pip install --no-cache-dir tensorflow-cpu && \
     pip install --no-cache-dir -e ./SynthSR && \
     rm -rf /var/lib/apt/lists/*
 

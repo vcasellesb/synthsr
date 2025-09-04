@@ -30,6 +30,7 @@ RUN apt-get update && \
     libnvidia-container-tools=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
     libnvidia-container1=${NVIDIA_CONTAINER_TOOLKIT_VERSION} && \
     pip install --upgrade pip && \
+    pip install --no-cache-dir 'tensorflow[and-cuda]' && \
     pip install --no-cache-dir -e . && \
     rm -rf /var/lib/apt/lists/*
 
