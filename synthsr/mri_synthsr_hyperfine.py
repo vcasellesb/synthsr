@@ -495,7 +495,7 @@ def conv_enc(nb_features,
     convL = getattr(keras.layers, 'Conv%dD' % ndims)
     conv_kwargs = {'padding': padding, 'activation': activation, 'data_format': 'channels_last'}
     maxpool = getattr(keras.layers, 'MaxPooling%dD' % ndims)
-    fused_batch_norm = False if (platform.system() == 'Darwin' and platform.machine() == 'arm64') else None    
+    fused_batch_norm = False if (platform.system() == 'Darwin' and platform.machine() == 'arm64') else None
 
     # down arm:
     # add nb_levels of conv + ReLu + conv + ReLu. Pool after each of first nb_levels - 1 layers
@@ -619,7 +619,7 @@ def conv_dec(nb_features,
     convL = getattr(keras.layers, 'Conv%dD' % ndims)
     conv_kwargs = {'padding': padding, 'activation': activation}
     upsample = getattr(keras.layers, 'UpSampling%dD' % ndims)
-    fused_batch_norm = False if (platform.system() == 'Darwin' and platform.machine() == 'arm64') else None    
+    fused_batch_norm = False if (platform.system() == 'Darwin' and platform.machine() == 'arm64') else None
 
     # up arm:
     # nb_levels - 1 layers of Deconvolution3D

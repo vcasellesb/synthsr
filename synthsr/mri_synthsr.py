@@ -44,12 +44,12 @@ def main(args=None):
     # models
     parser.add_argument("--lowfield", action="store_true", help="(optional) Use model for low-field scans (e.g., acquired with Hyperfine's Swoop scanner).")
     parser.add_argument("--v1", action="store_true", help="(optional) Use version 1 model from July 2021.")
-    
+
     # parameters
     parser.add_argument("--threads", type=int, default=1, help="(optional) Number of cores to be used. Default is 1.")
     parser.add_argument("--cpu", action="store_true", help="(optional) Enforce running with CPU rather than GPU.")
     parser.add_argument("--model", default=None, help="(optional) Use a different model file.")
-    
+
     # parse commandline
     args = parser.parse_args(args)
 
